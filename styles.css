@@ -1,0 +1,60 @@
+.h {
+	grid-column: 	1 / 4;
+	grid-row: 		1 / 2;
+}
+
+.l {
+	grid-column: 	1 / 2;
+	grid-row: 		2 / 3;
+	border: 1px solid black;
+}
+
+.m {
+	grid-column: 	2 / 3;
+	grid-row: 		2 / 3;
+	border: 1px solid black;
+}
+
+.r {
+	grid-column: 	3 / 4;
+	grid-row: 		2 / 3;
+	border: 1px solid black;
+}
+
+.grid-container {
+	display: none;
+	grid-template-areas:
+		'h h h'
+		'l m r';
+	grid-gap: 10px;
+}
+
+.grid-container > div {
+
+}
+
+.center {
+	text-align: center;
+}
+
+h1 {
+	text-size: 30px;
+	text-align: center;
+}
+
+h2 {
+	text-size: 20px;
+	text-align: center;
+}
+
+div {
+	padding: 10px;
+}
+
+button {
+	margin: 5px;
+}
+
+input {
+	margin: 5px;
+}

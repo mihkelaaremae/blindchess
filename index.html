@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<noscript>
+			<p>Enable JavaScript</p>
+		</noscript>
+		<t1 id="title"></t1>
+		<h1>Blind chess</h1>
+		<h2 id="h2_init">Initializing...</h2>
+		<div id="div_main" class="grid-container">
+			<div class="l">
+				<input type="checkbox" id="box_history" name="box_history" onclick="click_box_history();"/>
+				<label for="box_history">Show PGN</label>
+				<br>
+				<input type="checkbox" id="box_eval" name="box_eval" onclick="click_box_eval();"/>
+				<label for="box_eval">Show evaluation</label>
+				<br>
+				<button type="button" id="button_swap" onclick="click_button_swap()">Swap sides</button>
+				<br>
+				<button type="button" id="button_fen" onclick="click_button_fenclip()">FEN to clipboard</button>
+				<br>
+				<button type="button" id="button_lichess" onclick="click_button_lichess()">Open board in lichess</button>
+				<br>
+				<button type="button" id="button_undo" onclick="click_button_undo()">Undo</button>
+				<br>
+				<button type="button" id="button_new" onclick="click_button_new()">New game</button>
+				<br>
+				<label for="label_diff">Bot strength (0-20):</label>
+				<input type="text" id="label_diff" size="3" value="10" onchange="label_change_depth()">
+				<p class="center" id="text_pgn" style="display:none;">PGN:</p>
+			</div>
+			<div class="m">
+				<p class="center" id="text_eval" style="display:none;">Evaluation: 0</p>
+				<p class="center" id="text_pieces">You are playing the white pieces.</p>
+				<p class="center" id="text_tomove">White to move.</p>
+				<p class="center" id="last_move">A move has not yet been played.</p>
+				<div class="center">
+					<label for="input_move">Your move:</label>
+					<input type="text" id="input_move" size="8">
+					<button type="button" id="button_play" onclick="click_button_play();">Play move</button>
+				</div>
+				<br>
+				<p class="center" id="text_illegal" style="color:white;">This is an illegal or malformed move!</p>
+				<p class="center" id="text_eval" style="display:none;"></p>
+			</div>
+			<div class="r">
+				<h2>What's this?</h2>
+				<p>This website is for the practice of blind chess.</p>
+
+				<p>Moves are either in long format ... e2e4 -> from e2 to e4.</p>
+				<p>e7e8q -> pawn promotes to queen.</p>
+				<p>... or in <a href="https://en.wikipedia.org/wiki/Algebraic_notation_(chess)">algebraic notation</a> without checks or checkmates.</p>
+			</div>
+		</div>
+	</body>
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<script src="stockfish.asm.js"></script>
+		<script src="script.js"></script>
+	</head>
+</html>
